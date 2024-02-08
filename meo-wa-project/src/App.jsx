@@ -1,6 +1,8 @@
+import ProjectRoutes from "./Routes"
+
 const App = () => {
   return (
-    <div>Welcome to MEO-WA</div>
+    <ProjectRoutes/>
   )
 }
 
