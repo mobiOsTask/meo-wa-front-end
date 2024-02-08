@@ -3,9 +3,7 @@ import React from "react";
 const LoginPage = () => {
   return (
     <div>
-      <div>
-      
-      </div>
+      welcome to meo-wa
     </div>
   );
 };
