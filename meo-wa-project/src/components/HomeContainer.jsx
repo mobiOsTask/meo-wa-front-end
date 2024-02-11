@@ -1,80 +1,78 @@
-// import React from 'react';
-// import { Grid, Button, Typography, Item } from '@mui/material';
-// import { styled } from '@mui/system';
-// // Import other components and assets as needed
-
-// const CustomGridContainer = styled(Grid)({
-//   // Add custom styles for the grid container if needed
-// });
-
-// const CustomGridItem = styled(Grid)({
-//   // Add custom styles for grid items if needed
-// });
-
-// const CustomText = styled(Typography)({
-//   // Add custom styles for text components if needed
-// });
-
-// const CustomButton = styled(Button)({
-//   // Add custom styles for button components if needed
-// });
-
-// const CustomImage = styled('img')({
-//   // Add custom styles for image components if needed
-// });
-
-// const HomeContainer = () => {
-//   return (
-//     <CustomGridContainer container>
-//       {/* Grid Item 1 */}
-//       <CustomGridItem item xs={12} md={6}>
-//         <CustomText>
-//           Lorem ipsum <br />
-//           amet, consectetur <br />
-//           elit
-//         </CustomText>
-//         {/* Continue with other text components */}
-//       </CustomGridItem>
-
-//       {/* Grid Item 2 */}
-//       <CustomGridItem item xs={12} md={6}>
-//         {/* Continue with the rest of your components */}
-//         <CustomButton>
-//           Get Started
-//         </CustomButton>
-//         {/* Continue with other components */}
-//       </CustomGridItem>
-//     </CustomGridContainer>
-//   );
-// };
-
-// export default HomeContainer;
-
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import React from 'react';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
+import { Button, Hidden, Typography, styled } from '@mui/material';
+import HomeImages from './HomeImages';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
+const CustomTypography = styled(Typography)(({ theme }) => ({
+    width: '700px',
+    //   height: '46px',
+    //   top: '426px',
+    //   left: '137px',
+    marginBottom: '20px',
+    fontFamily: 'Arial',
+    fontSize: '20px',
+    fontWeight: 400,
+    //   lineHeight: '150px',
+    letterSpacing: '0em',
+    textAlign: 'left',
+    //   background: '#010101',
+    opacity: 0.6,
 }));
 
-export default function BasicGrid() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid md={11} lg={6} xs={11}>
-          <Item>xs=8</Item>
-        </Grid>
-        <Grid md={11} lg={6} xs={11}>
-          <Item>xs=4</Item>
-        </Grid>
-      </Grid>
-    </Box>
-  );
-}
+const Heading = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Arial',
+    fontSize: '50px',
+    fontWeight: 700,
+    letterSpacing: '0em',
+    textAlign: 'left',
+    lineHeight: '57px',
+    // marginBottom: '40px',
+}));
+
+const CustomButton = styled(Button)(({ theme }) => ({
+    width: '160px',
+    height: '63px',
+    // top: '510px',
+    // left: '137px',
+    borderRadius: '5px',
+    background: '#0582CA',
+    boxShadow: '5px 5px 8px 0px #00000040',
+    // fontFamily: 'Arial',
+    fontSize: '19px',
+    fontWeight: 700,
+    // lineHeight: '23px',
+    // letterSpacing: '0.01em',
+    // textAlign: 'left',
+    textTransform: 'none',
+}));
+
+const HomeContainer = () => {
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2}>
+                <Grid item md={7} xs={12}>
+                    <Box sx={{ marginTop: '80px' }}>
+                        <Heading sx={{ color: '#0582CA' }}>Lorem ipsum</Heading>
+                        <Heading sx={{ width: '457px', marginBottom: '30px' }}>amet, consectetur elit</Heading>
+                        <CustomTypography variant="body1" >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua
+                        </CustomTypography>
+                        <CustomTypography variant="body1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        </CustomTypography>
+                        <CustomButton variant="contained" color="primary">
+                            Get Started
+                        </CustomButton>
+                    </Box>
+                </Grid>
+                <Grid item md={5} xs={12}>
+                    <HomeImages />
+                </Grid>
+            </Grid>
+        </Box>
+    );
+};
+
+export default HomeContainer;
