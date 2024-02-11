@@ -7,19 +7,39 @@ import bellIcon from '../assets/bellIcon.svg';
 const StyledLogo = styled('img')({
     width: 140,
     marginTop: -16,
-    // marginLeft: 25,
 });
 
 const StyledBellIcon = styled('img')({
-    // width: 140,
-    // marginTop: -16,
-    // marginLeft: 25,
+    position: 'relative',
+    zIndex: 1,
+});
+
+const BellIconRing = styled(Box)({
+    position: 'absolute',
+    width: '49px',
+    height: '49px',
+    left: 'calc(50% + 454px)',
+    top: '7px',
+    borderRadius: '50%',
+    // backgroundColor: '#0582CA',
+    border: '3.5px solid #0582CA',
+    zIndex: 0,
+});
+
+const RedDot = styled(Box)({
+    position: 'absolute',
+    width: '5px',
+    height: '5px',
+    left: 'calc(50% + 490px)',
+    top: '17px',
+    borderRadius: '50%',
+    backgroundColor: '#FF0000',
+    zIndex: 2,
 });
 
 const NavbarContainer = styled(Box)({
     display: 'flex',
     alignItems: 'center',
-    // justifyContent: 'space-between',
     width: '100%',
     padding: '10px 0',
 });
@@ -38,10 +58,12 @@ const NavAccountContainer = styled(Box)({
     marginLeft: 550
 });
 
-// const PrivacyPolicyLink = styled('a')({
-//     textDecoration: 'none',
-//     color: '#000',
-// });
+const CustomTypography = styled(Typography)({
+    fontSize: '10px',
+    fontWeight: 700,
+    lineHeight: '11px',
+    fontStyle: 'bold'
+});
 
 const LoginButton = styled(Button)({
     border: '1px solid #000',
@@ -50,7 +72,26 @@ const LoginButton = styled(Button)({
     fontWeight: 'bold',
     fontSize: '15px',
     cursor: 'pointer',
+    left: '20px',
+    // height: '10',
 });
+
+// const LoginButton = styled(Button)({
+//     border: '1px solid #000',
+//     borderRadius: '20px',
+//     padding: '5px 15px',
+//     fontWeight: 700,
+//     fontSize: '15px',
+//     lineHeight: '17px',
+//     letterSpacing: '0em',
+//     textAlign: 'left',
+//     cursor: 'pointer',
+//     position: 'absolute',
+//     width: '48px',
+//     height: '17px',
+//     top: '22px',
+//     left: '1259px',
+// });
 
 const SignUpButton = styled(Button)({
     backgroundColor: '#A700',
@@ -60,21 +101,7 @@ const SignUpButton = styled(Button)({
     fontSize: '15px',
     padding: '5px 15px',
     cursor: 'pointer',
-});
-
-const CustomTypography = styled(Typography)({
-    // background: '#000000',
-    // fontFamily: 'Arial',
-    fontSize: '10px',
-    fontWeight: 700,
-    lineHeight: '11px',
-    fontStyle: 'bold'
-    // letterSpacing: '0em',
-    // textAlign: 'left',
-    // width: '31px',
-    // height: '11px',
-    // top: '30px',
-    // left: '242px',
+    left: '20px'
 });
 
 const Navbar = () => {
@@ -94,12 +121,14 @@ const Navbar = () => {
                 <CustomTypography variant="body2">PRIVACY POLICY</CustomTypography>
             </NavLinksContainer>
             <NavAccountContainer>
-                <StyledBellIcon src={bellIcon} alt='my Image' />
+                <BellIconRing />
+                <StyledBellIcon src={bellIcon} alt='my Image' sx={{ top: -2 }} />
+                <RedDot />
                 <LoginButton>LOGIN</LoginButton>
                 <SignUpButton onClick={handleSignUp}>SIGN UP</SignUpButton>
             </NavAccountContainer>
         </NavbarContainer>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;

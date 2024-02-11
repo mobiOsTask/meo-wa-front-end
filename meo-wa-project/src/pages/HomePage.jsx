@@ -3,9 +3,17 @@ import Navbar from '../components/Navbar';
 import HomeContainer from '../components/HomeContainer';
 import Grid from '@mui/material/Unstable_Grid2';
 import Sidebar from '../components/Sidebar';
-
+import AOS from 'aos';
+import { useEffect } from 'react'
 
 const HomePage = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000
+    })
+  }, [])
+
   return (
     <div>
       <Navbar />
