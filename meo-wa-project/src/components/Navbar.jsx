@@ -1,12 +1,18 @@
-import React from 'react'
+import { useState } from 'react'
 import { Box, Button, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import logo from '../assets/logo.png';
 import bellIcon from '../assets/bellIcon.svg';
+import { useNavigate } from "react-router-dom";
 
 const StyledLogo = styled('img')({
     width: 140,
     marginTop: -16,
+});
+
+const BellContainer = styled(Box)({
+    // position: 'relative',
+    cursor: 'pointer',
 });
 
 const StyledBellIcon = styled('img')({
@@ -24,6 +30,7 @@ const BellIconRing = styled(Box)({
     // backgroundColor: '#0582CA',
     border: '3.5px solid #0582CA',
     zIndex: 0,
+    // cursor: 'pointer',
 });
 
 const RedDot = styled(Box)({
@@ -48,7 +55,7 @@ const NavLinksContainer = styled(Box)({
     display: 'flex',
     alignItems: 'center',
     gap: '30px',
-    marginLeft: 185
+    marginLeft: 185,
 });
 
 const NavAccountContainer = styled(Box)({
@@ -58,54 +65,91 @@ const NavAccountContainer = styled(Box)({
     marginLeft: 550
 });
 
-const CustomTypography = styled(Typography)({
+// const CustomTypography = styled(Typography)({
+//     fontSize: '10px',
+//     fontWeight: 700,
+//     lineHeight: '11px',
+//     fontStyle: 'bold',
+//     cursor: 'pointer',
+// });
+
+const CustomTypography = styled(Typography)(({ selected, theme }) => ({
     fontSize: '10px',
     fontWeight: 700,
     lineHeight: '11px',
-    fontStyle: 'bold'
-});
+    fontStyle: 'bold',
+    cursor: 'pointer',
+    position: 'relative',
+    '&::after': {
+        content: '""',
+        position: 'absolute',
+        width: '40px',
+        height: '5px',
+        top: '15px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        borderRadius: '5px',
+        backgroundColor: selected ? '#0582CA' : 'transparent',
+        transition: 'background-color 0.2s ease-in-out', // Add transition property
+    },
+    '&:hover::after': {
+        backgroundColor: '#0582CA',
+    },
+}));
 
 const LoginButton = styled(Button)({
-    border: '1px solid #000',
-    borderRadius: '20px',
-    padding: '5px 15px',
-    fontWeight: 'bold',
+    position: 'absolute',
+    width: '79px',
+    height: '85px',
+    // left: '1346px',
+    right: '140px',
+    // left: '20px',
+    top: '-24px',
+    color: '#000000',
+    fontWeight: '700',
     fontSize: '15px',
-    cursor: 'pointer',
-    left: '20px',
-    // height: '10',
+    // lineHeight: '17.25px',
+    padding: '30px 5px 0px 5px',
+    background: '#FFFFFF',
+    border: '2px solid #000000',
+    borderRadius: '20px',
+    // cursor: 'pointer',
+    // '&:hover': {
+    //     background: '#000000',
+    //     color: '#FFFFFF',
+    // },
 });
 
-// const LoginButton = styled(Button)({
-//     border: '1px solid #000',
-//     borderRadius: '20px',
-//     padding: '5px 15px',
-//     fontWeight: 700,
-//     fontSize: '15px',
-//     lineHeight: '17px',
-//     letterSpacing: '0em',
-//     textAlign: 'left',
-//     cursor: 'pointer',
-//     position: 'absolute',
-//     width: '48px',
-//     height: '17px',
-//     top: '22px',
-//     left: '1259px',
-// });
-
 const SignUpButton = styled(Button)({
-    backgroundColor: '#A700',
-    borderRadius: '20px',
-    color: '#000',
-    fontWeight: 'bold',
+    position: 'absolute',
+    width: '79px',
+    height: '85px',
+    // left: '1346px',
+    right: '40px',
+    // left: '20px',
+    top: '-24px',
+    color: '#FFFFFF',
+    fontWeight: '700',
     fontSize: '15px',
-    padding: '5px 15px',
-    cursor: 'pointer',
-    left: '20px'
+    // lineHeight: '17.25px',
+    padding: '30px 5px 0px 5px',
+    background: '#000000',
+    border: '2px solid #000000',
+    borderRadius: '20px',
+    '&:hover': {
+        background: '#FFFFFF',
+        color: '#000000',
+    },
 });
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const [selectedLink, setSelectedLink] = useState(''); // Add this line
 
+    const handleNavLinkClick = (link) => {
+        navigate(link);
+        setSelectedLink(link); // Update the selected link
+    };
     const handleSignUp = () => {
         console.log('Sign Up button clicked');
     };
@@ -114,18 +158,50 @@ const Navbar = () => {
         <NavbarContainer>
             <StyledLogo src={logo} alt='my Image' />
             <NavLinksContainer>
-                <CustomTypography variant="body2">HOME</CustomTypography>
-                <CustomTypography variant="body2">ABOUT</CustomTypography>
-                <CustomTypography variant="body2">CONTACT</CustomTypography>
-                <CustomTypography variant="body2">TERMS</CustomTypography>
-                <CustomTypography variant="body2">PRIVACY POLICY</CustomTypography>
+                <CustomTypography
+                    variant="body2"
+                    selected={selectedLink === '/home'} // Check if it's the selected link
+                    onClick={() => handleNavLinkClick('/home')}
+                >
+                    HOME
+                </CustomTypography>
+                <CustomTypography
+                    variant="body2"
+                    selected={selectedLink === '/about'} // Check if it's the selected link
+                    onClick={() => handleNavLinkClick('/about')}
+                >
+                    ABOUT
+                </CustomTypography>
+                <CustomTypography
+                    variant="body2"
+                    selected={selectedLink === '/about'} // Check if it's the selected link
+                    onClick={() => handleNavLinkClick('/about')}
+                >
+                    CONTACT
+                </CustomTypography>
+                <CustomTypography
+                    variant="body2"
+                    selected={selectedLink === '/about'} // Check if it's the selected link
+                    onClick={() => handleNavLinkClick('/about')}
+                >
+                    TERMS
+                </CustomTypography>
+                <CustomTypography
+                    variant="body2"
+                    selected={selectedLink === '/about'} // Check if it's the selected link
+                    onClick={() => handleNavLinkClick('/about')}
+                >
+                    PRIVACY POLICY
+                </CustomTypography>
             </NavLinksContainer>
             <NavAccountContainer>
-                <BellIconRing />
-                <StyledBellIcon src={bellIcon} alt='my Image' sx={{ top: -2 }} />
-                <RedDot />
-                <LoginButton>LOGIN</LoginButton>
-                <SignUpButton onClick={handleSignUp}>SIGN UP</SignUpButton>
+                <BellContainer>
+                    <BellIconRing />
+                    <StyledBellIcon src={bellIcon} alt='my Image' sx={{ top: -2 }} />
+                    <RedDot />
+                </BellContainer>
+                <LoginButton onClick={() => (navigate('/login'))} data-as="slide-down" >LOGIN</LoginButton>
+                <SignUpButton onClick={handleSignUp} data-as="slide-down">SIGN UP</SignUpButton>
             </NavAccountContainer>
         </NavbarContainer>
     );

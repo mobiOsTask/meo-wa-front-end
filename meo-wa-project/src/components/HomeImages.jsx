@@ -27,7 +27,7 @@ const ManImage = styled(Image)({
 });
 
 const OldDocImage = styled(Image)({
-    width: '114px',
+    width: '120px',
     height: '236px',
     borderRadius: '50px',
     background: '#0582CA',
@@ -36,7 +36,7 @@ const OldDocImage = styled(Image)({
 })
 
 const LadyDocImage = styled(Image)({
-    width: '114px',
+    width: '120px',
     height: '236px',
     borderRadius: '50px',
     background: '#0582CA',
@@ -49,7 +49,7 @@ const HomeImages = () => {
         <ImagesContainer >
             <OldDocImage src={oldDoc} alt="Man Image" data-aos="fade-left" sx={{ top: 300, left: -90 }} />
             <ManImage src={man} alt="Man Image" data-aos="zoom-in" />
-            <LadyDocImage src={ladyDoc} alt="Man Image" data-aos="fade-right" sx={{ top: 300, left: 420 }} />
+            <LadyDocImage src={ladyDoc} alt="Man Image" data-aos="fade-right" sx={{ top: 300, left: 415 }} />
         </ImagesContainer>
     );
 };
