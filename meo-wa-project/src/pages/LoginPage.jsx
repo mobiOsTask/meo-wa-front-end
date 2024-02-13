@@ -15,7 +15,6 @@ import img19 from "../assets/Group 19.png";
 import img7 from "../assets/Group 7.png";
 import { useNavigate } from "react-router-dom";
 
-
 const LoginPage = () => {
   const navigate = useNavigate();
 
@@ -28,7 +27,6 @@ const LoginPage = () => {
           lg={6}
           md={6}
           xs={12}
-
           // lg={6}
           // md={8}
           style={{ marginTop: "70px", position: "relative" }}
@@ -76,12 +74,11 @@ const LoginPage = () => {
           <img
             src={img71}
             alt=""
-            style={{ width: "500px", height: "63px", margin: "-0.1px auto 0" }}
+            style={{ width: "370px", height: "63px", marginLeft: "70px" }}
           />
           <Typography
             className="text-black-900 font-arial text-left text-xl font-normal"
             fontWeight="Arial"
-            
             marginTop="55px"
             marginLeft="-10px"
             fontSize="20px"
@@ -95,7 +92,7 @@ const LoginPage = () => {
               width: "498px",
               height: "55px",
               marginLeft: "-10px",
-              // borderRadius: "5px",
+              transition: "0.3s",
               "& .MuiInputBase-root": {
                 borderRadius: "5px",
               },
@@ -119,6 +116,7 @@ const LoginPage = () => {
               height: "55px",
               marginLeft: "-10px",
               borderRadius: "5px",
+              transition: "0.3s",
               "& .MuiInputBase-root": {
                 borderRadius: "5px",
               },
@@ -126,7 +124,7 @@ const LoginPage = () => {
           ></TextField>
           <Checkbox
             sx={{
-              backgroundcolor: "grey",
+              backgroundcolor: "#000000 10%",
               marginLeft: "-510px",
               marginTop: "75px",
             }}
@@ -138,7 +136,7 @@ const LoginPage = () => {
           </Typography>
           <Typography
             sx={{
-              color: "#0000FF",
+              color: "#0582CA",
               marginTop: "-24px",
               marginLeft: "320px",
               cursor: "pointer",
@@ -160,7 +158,7 @@ const LoginPage = () => {
               fontSize: "20px",
               ":hover": { bgcolor: " #0096FF" },
             }}
-            onClick={() => (navigate('/home'))}
+            onClick={() => navigate("/home")}
           >
             Log In
           </Button>
@@ -171,7 +169,7 @@ const LoginPage = () => {
           </Typography>
           <Typography
             sx={{
-              color: "#0000FF",
+              color: "#0582CA",
               marginTop: "-25px",
               marginLeft: "315px",
               cursor: "pointer",
