@@ -5,6 +5,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Sidebar from '../components/Sidebar';
 import AOS from 'aos';
 import { useEffect } from 'react'
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
 
 const HomePage = () => {
 
@@ -16,7 +17,8 @@ const HomePage = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <ResponsiveAppBar />
       <Grid container >
         <Grid xs={1}><Sidebar /></Grid>
         <Grid xs={11}><HomeContainer /></Grid>
