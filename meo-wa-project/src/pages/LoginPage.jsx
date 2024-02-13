@@ -9,41 +9,79 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-// import img71 from "../assets/img_rectangle71.png";
+import img71 from "../assets/img_rectangle71.png";
 // import img61 from "../assets/img_rectangle61.png";
-import {useNavigate} from "react-router-dom";
+import img19 from "../assets/Group 19.png";
+import img7 from "../assets/Group 7.png";
+import { useNavigate } from "react-router-dom";
 
 
 const LoginPage = () => {
-
   const navigate = useNavigate();
-
 
   return (
     <Container>
       <Grid container>
         {/* {Image on the left} */}
-        <Grid item xs={6} style={{ marginTop: "150px"}}>
+        <Grid
+          item
+          lg={6}
+          md={6}
+          xs={12}
+
+          // lg={6}
+          // md={8}
+          style={{ marginTop: "70px", position: "relative" }}
+        >
           <img
-            // src={img61} // You may need to adjust this to your image path
+            src={img7}
             alt=""
-            style={{ width: "520px", height: "auto" }} // Adjust the width and height as needed
+            style={{
+              width: "552px",
+              height: "630px",
+              marginLeft: "-60px",
+              marginTop: "28px",
+            }}
+          />
+
+          <img
+            src={img19}
+            alt=""
+            style={{
+              width: "530px",
+              height: "438px",
+              position: "absolute",
+              marginLeft: "-530px",
+              marginTop: "134px",
+            }}
           />
         </Grid>
 
         {/* Form on the right */}
-        <Grid item xs={6} style={{ marginTop: "90px" }}>
-          <Typography variant="h3" fontWeight="bold">
+        <Grid
+          item
+          lg={6}
+          md={6}
+          xs={12}
+          // lg={6}
+          // md={4}
+          style={{
+            marginTop: "-640px",
+            marginLeft: "643px",
+          }}
+        >
+          <Typography fontWeight="700" fontStyle="Arial" fontSize="50px">
             WELCOME BACK TO
           </Typography>
           <img
-            // src={img71}
+            src={img71}
             alt=""
             style={{ width: "500px", height: "63px", margin: "-0.1px auto 0" }}
           />
           <Typography
             className="text-black-900 font-arial text-left text-xl font-normal"
-            fontWeight="normal"
+            fontWeight="Arial"
+            
             marginTop="55px"
             marginLeft="-10px"
             fontSize="20px"
@@ -53,19 +91,20 @@ const LoginPage = () => {
           </Typography>
           <TextField
             sx={{
-              backgroundColor: "#D6EBF2",
-              width: "480px",
+              backgroundColor: "#CEE5F3",
+              width: "498px",
+              height: "55px",
               marginLeft: "-10px",
-              borderRadius: "20px",
+              // borderRadius: "5px",
               "& .MuiInputBase-root": {
-                borderRadius: "20px",
+                borderRadius: "5px",
               },
             }}
           ></TextField>
 
           <Typography
             className="text-black-900 font-arial text-left text-xl font-normal"
-            fontWeight="normal"
+            fontWeight="Arial"
             marginTop="30px"
             marginLeft="-10px"
             fontSize="20px"
@@ -75,24 +114,25 @@ const LoginPage = () => {
           <TextField
             type="password"
             sx={{
-              backgroundColor: "#D6EBF2",
-              width: "480px",
+              backgroundColor: "#CEE5F3",
+              width: "498px",
+              height: "55px",
               marginLeft: "-10px",
-              borderRadius: "20px",
+              borderRadius: "5px",
               "& .MuiInputBase-root": {
-                borderRadius: "20px",
+                borderRadius: "5px",
               },
             }}
           ></TextField>
           <Checkbox
             sx={{
               backgroundcolor: "grey",
-              marginLeft: "-490px",
+              marginLeft: "-510px",
               marginTop: "75px",
             }}
           ></Checkbox>
           <Typography
-            sx={{ marginLeft: "26px", color: "grey", marginTop: "-33px" }}
+            sx={{ marginLeft: "20px", color: "grey", marginTop: "-33px" }}
           >
             Keep me logged in
           </Typography>
@@ -100,7 +140,7 @@ const LoginPage = () => {
             sx={{
               color: "#0000FF",
               marginTop: "-24px",
-              marginLeft: "291px",
+              marginLeft: "320px",
               cursor: "pointer",
             }}
           >
@@ -108,7 +148,7 @@ const LoginPage = () => {
           </Typography>
           <Button
             sx={{
-              backgroundColor: "#4169E1",
+              backgroundColor: "#0582CA",
               color: "white",
               fontWeight: "bold",
               marginLeft: "130px",
