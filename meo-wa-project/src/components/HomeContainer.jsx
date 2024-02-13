@@ -62,7 +62,7 @@ const HomeContainer = () => {
                         <CustomTypography variant="body1">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         </CustomTypography>
-                        <CustomButton variant="contained" color="primary">
+                        <CustomButton variant="contained" color="primary" data-as="flip-up">
                             Get Started
                         </CustomButton>
                     </Box>

@@ -18,6 +18,14 @@ const SidebarContainer = styled(Box)({
     width: '6%',
 });
 
+const SideBarComponent = styled(Box)({
+    cursor: 'pointer',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    // marginBottom: '0px',
+});
+
 const StyledImage = styled('img')({
     height: '30px',
     width: '30px',
@@ -52,18 +60,24 @@ const Sidebar = () => {
                 width="51%"
                 md={{ width: '100%' }}
             >
-                <StyledImage src={dashboard} alt="rectangle202" />
-                <StyledText variant="txtArialBoldMT10Lightblue700">Dashboard</StyledText>
-                <StyledImage src={browse} alt="rectangle203" />
-                <StyledText variant="txtArialBoldMT10Lightblue700">Browse</StyledText>
-                <StyledImage
-                    src={helpSupport}
-                    alt="rectangle205"
-                    marginTop="29px"
-                />
-                <StyledText variant="txtArialBoldMT10Lightblue700">
-                    Help & Support
-                </StyledText>
+                <SideBarComponent>
+                    <StyledImage src={dashboard} alt="rectangle202" />
+                    <StyledText variant="txtArialBoldMT10Lightblue700">Dashboard</StyledText>
+                </SideBarComponent>
+                <SideBarComponent>
+                    <StyledImage src={browse} alt="rectangle203" />
+                    <StyledText variant="txtArialBoldMT10Lightblue700">Browse</StyledText>
+                </SideBarComponent>
+                <SideBarComponent>
+                    <StyledImage
+                        src={helpSupport}
+                        alt="rectangle205"
+                        marginTop="29px"
+                    />
+                    <StyledText variant="txtArialBoldMT10Lightblue700">
+                        Help & Support
+                    </StyledText>
+                </SideBarComponent>
             </Box>
         </SidebarContainer>
     );
