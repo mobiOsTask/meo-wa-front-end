@@ -82,6 +82,7 @@ const Form = () => {
                     marginLeft: "320px",
                     cursor: "pointer",
                 }}
+                onClick={() => navigate('/forgotPW')}
             >
                 Forgot your password?
             </Typography>
@@ -115,6 +116,7 @@ const Form = () => {
                     marginLeft: "315px",
                     cursor: "pointer",
                 }}
+                onClick={() => navigate('/signUp')}
             >
                 Sign Up
             </Typography>
