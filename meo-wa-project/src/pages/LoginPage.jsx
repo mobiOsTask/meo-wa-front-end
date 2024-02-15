@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import img71 from "../assets/img_rectangle71.png";
-// import img61 from "../assets/img_rectangle61.png";
+//import img61 from "../assets/img_rectangle61.png";
 import img19 from "../assets/Group 19.png";
 import img7 from "../assets/Group 7.png";
 import { useNavigate } from "react-router-dom";
@@ -59,8 +59,8 @@ const LoginPage = () => {
         <Grid
           item
           lg={6}
-          md={6}
-          xs={12}
+          md={8}
+          // xs={12}
           // lg={6}
           // md={4}
           style={{
