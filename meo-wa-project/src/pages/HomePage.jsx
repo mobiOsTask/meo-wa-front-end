@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import HomeContainer from '../components/HomeContainer';
+import HomeContainer from '../components/HomePage/HomeContainer';
 import Grid from '@mui/material/Unstable_Grid2';
 import Sidebar from '../components/Sidebar';
 import AOS from 'aos';

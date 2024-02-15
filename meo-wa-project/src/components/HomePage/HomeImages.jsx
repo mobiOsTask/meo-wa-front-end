@@ -1,9 +1,9 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Container } from '@mui/material';
-import man from '../assets/man.png';
-import oldDoc from '../assets/olddoc.png';
-import ladyDoc from '../assets/ladyDoc.png';
+import man from '../../assets/man.png';
+import oldDoc from '../../assets/olddoc.png';
+import ladyDoc from '../../assets/ladyDoc.png';
 
 const ImagesContainer = styled(Container)({
     display: 'flex',
