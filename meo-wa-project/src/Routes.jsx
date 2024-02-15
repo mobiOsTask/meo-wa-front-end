@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 const ProjectRoutes = () => {
     return (
